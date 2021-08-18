@@ -23,19 +23,9 @@ jobs:
         run: |
           npm i
           npm run build:prod
-      - name: Archive build
+      - name: deploy
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          name: deploy_dist
-          path: dist
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: checkout
-        uses: actions/checkout@v1
-      - name: download
-        uses: actions/dowload-artifact@v1
-        with:
-          name: deploy_dist
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
