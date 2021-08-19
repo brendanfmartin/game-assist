@@ -37,5 +37,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change
-          branch: gh-pages # The branch the action should deploy to.
+          branch: gh-pages
           push_options: '--force'
