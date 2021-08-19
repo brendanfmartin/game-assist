@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotesComponent } from './notes/notes.component';
-import { AddNoteComponent } from './add-note/add-note.component';
-import { NoteComponent } from './note/note.component';
-import { EditNoteComponent } from './edit-note/edit-note.component';
+import { NotesComponent } from './components/notes/notes/notes.component';
+import { AddNoteComponent } from './components/notes/add-note/add-note.component';
+import { NoteComponent } from './components/notes/note/note.component';
+import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,15 @@ const routes: Routes = [
   {
     path: 'note/edit/:noteId',
     component: EditNoteComponent
-  }
+  },
+  {
+    path: 'home',
+    component: DashboardComponent
+  },
+  {
+    path: '**',
+    component: DashboardComponent
+  },
 ];
 
 @NgModule({

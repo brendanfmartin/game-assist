@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../services/notes.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { NotesService } from '../../../services/notes.service';
 
 @Component({
   selector: 'app-add-note',
