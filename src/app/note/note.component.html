@@ -3,6 +3,7 @@
     <mat-card-title>{{note.created_at | date:'short'}}</mat-card-title>
     <mat-card-content>{{note.note}}</mat-card-content>
     <mat-card-footer>
+      <button mat-button color="warn" (click)="delete()">Delete</button>
       <button mat-button (click)="back()">Back</button>
     </mat-card-footer>
   </mat-card>

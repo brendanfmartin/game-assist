@@ -29,4 +29,11 @@ export class NoteComponent implements OnInit {
     this.location.back();
   }
 
+  delete(): void {
+    if (this.note) {
+      this.notesService.deleteNote(this.note.id);
+      this.location.back();
+    }
+  }
+
 }
