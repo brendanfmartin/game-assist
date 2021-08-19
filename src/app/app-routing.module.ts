@@ -5,8 +5,13 @@ import { AddNoteComponent } from './components/notes/add-note/add-note.component
 import { NoteComponent } from './components/notes/note/note.component';
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddGameComponent } from './components/games/add-game/add-game.component';
 
 const routes: Routes = [
+  {
+    path: 'add-game',
+    component: AddGameComponent
+  },
   {
     path: 'notes',
     component: NotesComponent

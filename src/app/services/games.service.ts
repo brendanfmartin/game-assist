@@ -19,11 +19,11 @@ export class GamesService {
     return games.filter((game) => game.id === id)[0];
   }
 
-  setGame(game: string): void {
+  setGame(title: string): void {
     const id = this.getIndex() + 1;
     const newGame: IGame = {
       id,
-      name: game,
+      title,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     }

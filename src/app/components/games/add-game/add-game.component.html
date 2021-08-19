@@ -1,0 +1,16 @@
+<mat-card>
+  <form [formGroup]="addGameForm" (ngSubmit)="addGame()">
+    <mat-form-field appearance="fill">
+      <mat-label>Add Game</mat-label>
+      <textarea
+        matInput
+        required
+        placeholder="Add Note"
+        formControlName="title"></textarea>
+    </mat-form-field>
+    <mat-card-footer>
+      <button mat-raised-button color="primary" type="save">Save</button>
+      <button mat-raised-button color="secondary" (click)="cancel()">Cancel</button>
+    </mat-card-footer>
+  </form>
+</mat-card>

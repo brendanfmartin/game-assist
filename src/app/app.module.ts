@@ -22,6 +22,7 @@ import { NotesComponent } from './components/notes/notes/notes.component';
 import { AddNoteComponent } from './components/notes/add-note/add-note.component';
 import { NoteComponent } from './components/notes/note/note.component';
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
+import { AddGameComponent } from './components/games/add-game/add-game.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { EditNoteComponent } from './components/notes/edit-note/edit-note.compon
     NotesComponent,
     AddNoteComponent,
     NoteComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    AddGameComponent
   ],
   imports: [
     BrowserModule,
