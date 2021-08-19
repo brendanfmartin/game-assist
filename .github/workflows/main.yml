@@ -34,7 +34,8 @@ jobs:
           npm run build:prod
       - name: deploy
         if: success()
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
+          commit_message: Automated Change
           branch: gh-pages # The branch the action should deploy to.
-          folder: / # The folder the action should deploy.
+          push_options: '--force'
