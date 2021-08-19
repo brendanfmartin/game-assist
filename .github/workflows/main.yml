@@ -32,6 +32,7 @@ jobs:
         run: |
           npm i
           npm run build:prod
+          cp -r docs/* ./
       - name: deploy
         if: success()
         uses: stefanzweifel/git-auto-commit-action@v4
