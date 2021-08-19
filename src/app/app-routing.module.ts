@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotesComponent } from './notes/notes.component';
 import { AddNoteComponent } from './add-note/add-note.component';
+import { NoteComponent } from './note/note.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,11 @@ const routes: Routes = [
   {
     path: 'add-note',
     component: AddNoteComponent
-  }
+  },
+  {
+    path: 'note/:noteId',
+    component: NoteComponent
+  },
 ];
 
 @NgModule({

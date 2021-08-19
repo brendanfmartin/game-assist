@@ -23,4 +23,8 @@ export class NotesComponent implements OnInit {
     this.router.navigateByUrl('add-note');
   }
 
+  goToNote(id: number): void {
+    this.router.navigateByUrl(`note/${id}`);
+  }
+
 }
