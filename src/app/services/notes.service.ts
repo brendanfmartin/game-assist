@@ -34,7 +34,21 @@ export class NotesService {
 
   deleteNote(id: number): void {
     const notes: INote[] = this.getNotes();
-    notes.splice(id, id + 1);
+    const newNotes: INote[] = []
+    notes.forEach((note: INote) => {
+      if (note.id !== id) {
+       newNotes.push(note);
+      }
+    });
+    this.saveAllNotes(newNotes);
+  }
+
+  updateNote(id: number, note: string): void {
+    const { created_at } = this.getNote(id);
+    this.deleteNote(id);
+    const notes = this.getNotes();
+    const newNote = { created_at, id, updated_at: new Date().toISOString(), note };
+    notes.push(newNote);
     this.saveAllNotes(notes);
   }
 

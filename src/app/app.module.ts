@@ -21,6 +21,7 @@ import { AddNoteComponent } from './add-note/add-note.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoteComponent } from './note/note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NoteComponent } from './note/note.component';
     DashboardComponent,
     NotesComponent,
     AddNoteComponent,
-    NoteComponent
+    NoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,
