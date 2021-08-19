@@ -20,6 +20,7 @@ import { NotesComponent } from './notes/notes.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoteComponent } from './note/note.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TopNavComponent,
     DashboardComponent,
     NotesComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,

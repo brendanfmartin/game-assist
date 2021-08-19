@@ -1,1 +1,6 @@
+<h1>Notes <button mat-raised-button color="primary" (click)="addNote()">+</button></h1>
+<ng-container *ngFor="let note of notes">
+  <br>
+  <mat-card>{{note.note}}</mat-card>
+</ng-container>
 <app-add-note></app-add-note>

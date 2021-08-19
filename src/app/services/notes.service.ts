@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface INote {
-  id: number;
-  created_at: string;
-  updated_at: string;
-  note: string;
-}
+import { INote } from '../models/note';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +12,10 @@ export class NotesService {
     return JSON.parse(localStorage.getItem('notes') ?? '[]');
   }
 
-  // getNote(id: number): INote {
-  //   const notes = this.getNotes();
-  //   const note = notes.filter(note => note.id === id)[0];
-  //   return note;
-  // }
+  getNote(id: number): INote {
+    const notes: INote[] = this.getNotes()
+    return notes.filter((note) => note.id === id)[0];
+  }
 
   setNote(note: string): void {
     const id = this.getIndex() + 1;
@@ -41,7 +34,7 @@ export class NotesService {
     const notes: INote[] = this.getNotes()
     if (notes.length) {
       let max = 0;
-      notes.forEach((note: INote) => note.id > max ? max = note.id : max);
+      notes.forEach((note) => note.id > max ? max = note.id : max);
       return max;
     } else {
       return -1;

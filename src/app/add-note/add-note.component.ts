@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../services/notes.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-note',
@@ -12,17 +14,22 @@ export class AddNoteComponent implements OnInit {
   addNoteForm: FormGroup = this.formBuilder.group({note: ''});
 
   constructor(private notesService: NotesService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private router: Router,
+              private location: Location) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addNote(): void {
     const note = this.addNoteForm.getRawValue().note;
     if (note) {
-      console.log(note);
       this.notesService.setNote(note);
+      this.router.navigateByUrl('/notes');
     }
+  }
+
+  cancel(): void {
+    this.location.back();
   }
 
 }
