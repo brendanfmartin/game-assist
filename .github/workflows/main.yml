@@ -12,6 +12,9 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+    concurrency:
+      group: ${{ github.head_ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v1
       - name: cache node modules
