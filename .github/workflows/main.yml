@@ -16,7 +16,7 @@ jobs:
           npm run build:prod
           cp docs/index.html docs/404.html
           echo "completed. ls"
-          ls -al
+          ls -al docs
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
