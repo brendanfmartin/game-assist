@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesService } from '../services/games.service';
-import { IGame } from '../models/game';
 
 @Component({
   selector: 'app-games',
@@ -9,12 +7,8 @@ import { IGame } from '../models/game';
 })
 export class GamesComponent implements OnInit {
 
-  games: IGame[] = [];
+  constructor() { }
 
-  constructor(private gameService: GamesService) { }
-
-  ngOnInit(): void {
-    this.games = this.gameService.getGames();
-  }
+  ngOnInit(): void { }
 
 }

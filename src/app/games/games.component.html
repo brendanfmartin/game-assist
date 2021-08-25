@@ -1,8 +1,6 @@
-<mat-list>
-  <div mat-subheader>Games</div>
-  <mat-list-item *ngFor="let game of games">
-    <mat-icon mat-list-icon>game</mat-icon>
-    <div mat-line>{{game.title}}</div>
-    <div mat-line> {{game.updated_at | date}} </div>
-  </mat-list-item>
-</mat-list>
+<h1>Games</h1>
+<mat-nav-list>
+  <mat-list-item [routerLink]="['/games/list']">List</mat-list-item>
+  <mat-list-item [routerLink]="['/games/add']">Add</mat-list-item>
+</mat-nav-list>
+<router-outlet></router-outlet>
