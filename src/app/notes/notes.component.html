@@ -1,9 +1,0 @@
-<h1>Notes <button mat-raised-button color="primary" (click)="addNote()">+</button></h1>
-<ng-container *ngFor="let note of notes">
-  <br>
-  <mat-card (click)="goToNote(note.id)">
-    <mat-card-subtitle>{{note.note | slice:0:100}}</mat-card-subtitle>
-    {{note.created_at | date:'short'}}
-  </mat-card>
-</ng-container>
-<br>
