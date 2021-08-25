@@ -21,7 +21,8 @@ const routes: Routes = [
   {
     path: 'note/edit/:noteId',
     component: EditNoteComponent
-  }
+  },
+  { path: 'games', loadChildren: () => import('./games/games.module').then(m => m.GamesModule) }
 ];
 
 @NgModule({
