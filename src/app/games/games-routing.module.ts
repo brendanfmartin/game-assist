@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GamesComponent } from './games.component';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
+import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
     component: GamesComponent,
     children: [
       { path: 'add', component: AddComponent },
-      { path: 'list', component: ListComponent }
+      { path: 'list', component: ListComponent },
+      { path: 'detail/:gameId', component: DetailComponent}
     ]
   }
 ];

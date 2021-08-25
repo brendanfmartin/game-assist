@@ -12,13 +12,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
   declarations: [
     GamesComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
