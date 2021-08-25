@@ -1,7 +1,7 @@
 <mat-card>
-  <form [formGroup]="addNoteForm" (ngSubmit)="addNote()">
+  <form [formGroup]="editNoteForm" (ngSubmit)="updateNote()">
     <mat-form-field appearance="fill">
-      <mat-label>Add Note</mat-label>
+      <mat-label>Update Note</mat-label>
       <textarea
         matInput
         required
@@ -14,3 +14,4 @@
     </mat-card-footer>
   </form>
 </mat-card>
+

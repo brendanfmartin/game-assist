@@ -6,10 +6,12 @@ import { INote } from '../models/note';
 })
 export class NotesService {
 
+  private readonly noteKey = 'notes';
+
   constructor() { }
 
   getNotes(): any {
-    return JSON.parse(localStorage.getItem('notes') ?? '[]');
+    return JSON.parse(localStorage.getItem(this.noteKey) ?? '[]');
   }
 
   getNote(id: number): INote {
@@ -27,7 +29,27 @@ export class NotesService {
     }
     const notes = this.getNotes();
     notes.push(newNote);
-    localStorage.setItem(`notes`, JSON.stringify(notes));
+    this.saveAllNotes(notes);
+  }
+
+  deleteNote(id: number): void {
+    const notes: INote[] = this.getNotes();
+    const newNotes: INote[] = []
+    notes.forEach((note: INote) => {
+      if (note.id !== id) {
+       newNotes.push(note);
+      }
+    });
+    this.saveAllNotes(newNotes);
+  }
+
+  updateNote(id: number, note: string): void {
+    const { created_at } = this.getNote(id);
+    this.deleteNote(id);
+    const notes = this.getNotes();
+    const newNote = { created_at, id, updated_at: new Date().toISOString(), note };
+    notes.push(newNote);
+    this.saveAllNotes(notes);
   }
 
   private getIndex(): number {
@@ -39,6 +61,9 @@ export class NotesService {
     } else {
       return -1;
     }
+  }
 
+  private saveAllNotes(notes: INote[]): void {
+    localStorage.setItem(this.noteKey, JSON.stringify(notes));
   }
 }

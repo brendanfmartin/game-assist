@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotesService } from '../services/notes.service';
 import { INote } from '../models/note';
 import { Location } from '@angular/common';
@@ -16,6 +16,7 @@ export class NoteComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private location: Location,
+              private router: Router,
               private notesService: NotesService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,19 @@ export class NoteComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  delete(): void {
+    if (this.note) {
+      this.notesService.deleteNote(this.note.id);
+      this.location.back();
+    }
+  }
+
+  edit(): void {
+    if (this.note) {
+      this.router.navigateByUrl(`note/edit/${this.note.id}`)
+    }
   }
 
 }
