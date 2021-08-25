@@ -17,18 +17,29 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { NotesComponent } from './notes/notes.component';
+import { AddNoteComponent } from './add-note/add-note.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoteComponent } from './note/note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     DashboardComponent,
-    NotesComponent
+    NotesComponent,
+    AddNoteComponent,
+    NoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatSliderModule,
     LayoutModule,
     MatToolbarModule,
@@ -38,7 +49,8 @@ import { NotesComponent } from './notes/notes.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
