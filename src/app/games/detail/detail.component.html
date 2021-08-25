@@ -1,6 +1,7 @@
 <ng-container *ngIf="game">
   <mat-card>
     <mat-card-title>{{ game.title }}</mat-card-title>
-    <p>{{ game.created_at }}</p>
+    <p>added: {{ game.created_at | date }}</p>
+    <button mat-button [color]="'primary'">edit</button>
   </mat-card>
 </ng-container>
