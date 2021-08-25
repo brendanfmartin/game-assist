@@ -32,10 +32,19 @@ jobs:
         run: |
           npm i
           npm run build:prod
-#      - name: deploy
-#        if: success()
-#        uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          commit_message: Automated Change
-#          branch: gh-pages
-#          push_options: '--force'
+  ghPages:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    concurrency:
+      group: main
+      cancel-in-progress: true
+    steps:
+      - name: deploy
+        if: success()
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change
+          branch: gh-pages
+          push_options: '--force'
